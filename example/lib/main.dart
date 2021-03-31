@@ -14,8 +14,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
+  String _platformVersion = 'Unknown',_imeiNo = "",_modelName = "",
+  _manufacturerName = "";
+  int _apiLevel =0;
   @override
   void initState() {
     super.initState();
@@ -24,16 +25,17 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
+    String platformVersion,imeiNo,modelName,manufacturer;
+    int apiLevel;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       platformVersion = await DeviceInformation.platformVersion;
-      print("IMEI NO::${await DeviceInformation.deviceIMEINumber}");
-      print("Model:${await DeviceInformation.deviceModel}");
-      print("Manfacturer::${await DeviceInformation.deviceManufacturer}");
-       print("Apilevel::${await DeviceInformation.APILevel}");
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      imeiNo = await DeviceInformation.deviceIMEINumber;
+      modelName = await DeviceInformation.deviceModel;
+      manufacturer = await DeviceInformation.deviceManufacturer;
+      apiLevel =  await DeviceInformation.APILevel;
+    } on PlatformException catch(e) {
+      platformVersion = '${e.message}';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -42,7 +44,11 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      _platformVersion = platformVersion;
+      _platformVersion = "Running on :$platformVersion";
+      _imeiNo = imeiNo;
+      _modelName = modelName;
+      _manufacturerName = manufacturer;
+      _apiLevel = apiLevel;
     });
   }
 
@@ -54,7 +60,21 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: [
+              SizedBox(height: 40,),
+              Text('$_platformVersion\n'),
+              SizedBox(height: 10,),
+              Text('IMEI Number: $_imeiNo\n'),
+              SizedBox(height: 10,),
+              Text('Device Model: $_modelName\n'),
+              SizedBox(height: 10,),
+              Text('API Level: $_apiLevel\n'),
+              SizedBox(height: 10,),
+              Text('Manufacture Name: $_manufacturerName\n'),
+              SizedBox(height: 10,),
+            ],
+          ),
         ),
       ),
     );
