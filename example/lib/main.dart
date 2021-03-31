@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
       print("IMEI NO::${await DeviceInformation.deviceIMEINumber}");
       print("Model:${await DeviceInformation.deviceModel}");
       print("Manfacturer::${await DeviceInformation.deviceManufacturer}");
-      print("Apilevel::${await DeviceInformation.APILevel}");
+       print("Apilevel::${await DeviceInformation.APILevel}");
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }

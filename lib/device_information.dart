@@ -16,7 +16,7 @@ class DeviceInformation {
     return await _channel.invokeMethod("getIMEINumber");
   }
 
-  static Future<int> get APILevel async{
+  static Future<dynamic> get APILevel async{
     return await _channel.invokeMethod("getAPILevel");
   }
 
