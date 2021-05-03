@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown',_imeiNo = "",_modelName = "",
-  _manufacturerName = "";
+  _manufacturerName = "",_deviceName="",_productName = "",_cpuType="",_hardware = "";
   int _apiLevel =0;
   @override
   void initState() {
@@ -25,15 +25,21 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion,imeiNo,modelName,manufacturer;
+    String platformVersion,imeiNo, modelName,manufacturer,deviceName,productName,
+    cpuType,hardware;
     int apiLevel;
-    // Platform messages may fail, so we use a try/catch PlatformException.
+    // Platform messages may fail,
+    // so we use a try/catch PlatformException.
     try {
       platformVersion = await DeviceInformation.platformVersion;
       imeiNo = await DeviceInformation.deviceIMEINumber;
       modelName = await DeviceInformation.deviceModel;
       manufacturer = await DeviceInformation.deviceManufacturer;
-      apiLevel =  await DeviceInformation.APILevel;
+      apiLevel =  await DeviceInformation.apiLevel;
+      deviceName = await DeviceInformation.deviceName;
+      productName = await DeviceInformation.productName;
+      cpuType = await DeviceInformation.cpuName;
+      hardware = await DeviceInformation.hardware;
     } on PlatformException catch(e) {
       platformVersion = '${e.message}';
     }
@@ -49,6 +55,10 @@ class _MyAppState extends State<MyApp> {
       _modelName = modelName;
       _manufacturerName = manufacturer;
       _apiLevel = apiLevel;
+      _deviceName = deviceName;
+      _productName = productName;
+      _cpuType = cpuType;
+      _hardware = hardware;
     });
   }
 
@@ -73,6 +83,15 @@ class _MyAppState extends State<MyApp> {
               SizedBox(height: 10,),
               Text('Manufacture Name: $_manufacturerName\n'),
               SizedBox(height: 10,),
+              Text('Device Name: $_deviceName\n'),
+              SizedBox(height: 10,),
+              Text('Product Name: $_productName\n'),
+              SizedBox(height: 10,),
+              Text('CPU Type: $_cpuType\n'),
+              SizedBox(height: 10,),
+              Text('Hardware Name: $_hardware\n'),
+              SizedBox(height: 10,),
+
             ],
           ),
         ),

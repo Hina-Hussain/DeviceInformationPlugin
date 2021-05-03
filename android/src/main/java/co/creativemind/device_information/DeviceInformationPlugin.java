@@ -64,6 +64,20 @@ public class DeviceInformationPlugin implements FlutterPlugin, MethodCallHandler
     else if(call.method.equals("getManufacturer")){
       result.success(Build.MANUFACTURER);
     }
+    // Added in new release 0.0.2
+    else if(call.method.equals("getDevice")){
+      result.success(Build.DEVICE);
+    }
+    else if(call.method.equals("getProduct")){
+      result.success(Build.PRODUCT);
+    }
+    else if(call.method.equals("getCPUType")){
+      result.success(Build.CPU_ABI);
+    }
+    else if(call.method.equals("getHardware")){
+      result.success(Build.HARDWARE);
+    }
+
     else {
       result.notImplemented();
     }
