@@ -34,7 +34,7 @@ In android add the following permission:
 ```
 <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 ```
-Then for API targetting from Marshmallow, request runtime permissions.
+Then for API targetting from Marshmallow, need to request runtime permissions.
 Although in iOS there is no need to specify permissions.
 
 ## Contributing
