@@ -9,7 +9,7 @@ import UIKit
 
 public extension UIDevice{
     
-    /// pares the deveice name as the standard name
+    /// pares the device name as the standard name
         var modelName: String {
 
             #if targetEnvironment(simulator)

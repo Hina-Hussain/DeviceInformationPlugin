@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown',_imeiNo = "",_modelName = "",
   _manufacturerName = "",_deviceName="",_productName = "",_cpuType="",_hardware = "";
-  int _apiLevel =0;
+  var _apiLevel;
   @override
   void initState() {
     super.initState();
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
   Future<void> initPlatformState() async {
     String platformVersion,imeiNo, modelName,manufacturer,deviceName,productName,
     cpuType,hardware;
-    int apiLevel;
+    var apiLevel;
     // Platform messages may fail,
     // so we use a try/catch PlatformException.
     try {
@@ -38,8 +38,8 @@ class _MyAppState extends State<MyApp> {
       apiLevel =  await DeviceInformation.apiLevel;
       deviceName = await DeviceInformation.deviceName;
       productName = await DeviceInformation.productName;
-      cpuType = await DeviceInformation.cpuName;
-      hardware = await DeviceInformation.hardware;
+      //cpuType = await DeviceInformation.cpuName;
+      //hardware = await DeviceInformation.hardware;
     } on PlatformException catch(e) {
       platformVersion = '${e.message}';
     }
@@ -71,6 +71,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SizedBox(height: 40,),
               Text('$_platformVersion\n'),

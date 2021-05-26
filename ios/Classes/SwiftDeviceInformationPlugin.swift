@@ -26,6 +26,17 @@ public class SwiftDeviceInformationPlugin: NSObject, FlutterPlugin {
     else if(call.method.elementsEqual("getManufacturer")){
         result("Apple")
     }
-    
+    else if(call.method.elementsEqual("getDevice")){
+     result(UIDevice.current.name)
+    }
+    else if(call.method.elementsEqual("getProduct")){
+        result(UIDevice.current.model)
+    }
+    else if(call.method.elementsEqual("getCPUType")){
+        
+        result(UIDevice.)
+    }
+    else if(call.method.elementsEqual("getHardware")){
+    }
   }
 }
