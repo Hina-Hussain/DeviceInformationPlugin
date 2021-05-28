@@ -1,13 +1,13 @@
 # Device Information
 
-A flutter plugin to get device information such as device IMEI number, model name, API level, etc for both android & iOS.
+A flutter plugin to get device information such as device IMEI number, model name, API level,CPU Type,Product Name etc for both android & iOS.
 
 ## Installation
 
 Add following dependency in pubspec.yaml file:
 
 ```bash
-device_information:^0.0.1
+device_information:^0.0.2
 ```
 Install by running:
 
@@ -25,7 +25,11 @@ try {
       imeiNo = await DeviceInformation.deviceIMEINumber;
       modelName = await DeviceInformation.deviceModel;
       manufacturer = await DeviceInformation.deviceManufacturer;
-      apiLevel =  await DeviceInformation.APILevel;
+      apiLevel =  await DeviceInformation.apiLevel;
+      deviceName = await DeviceInformation.deviceName;
+      productName = await DeviceInformation.productName;
+      cpuType = await DeviceInformation.cpuName;
+      hardware = await DeviceInformation.hardware;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
