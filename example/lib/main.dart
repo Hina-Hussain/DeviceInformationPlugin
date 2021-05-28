@@ -38,8 +38,8 @@ class _MyAppState extends State<MyApp> {
       apiLevel =  await DeviceInformation.apiLevel;
       deviceName = await DeviceInformation.deviceName;
       productName = await DeviceInformation.productName;
-      //cpuType = await DeviceInformation.cpuName;
-      //hardware = await DeviceInformation.hardware;
+      cpuType = await DeviceInformation.cpuName;
+      hardware = await DeviceInformation.hardware;
     } on PlatformException catch(e) {
       platformVersion = '${e.message}';
     }

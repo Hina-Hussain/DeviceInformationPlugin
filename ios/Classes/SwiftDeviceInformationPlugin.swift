@@ -33,10 +33,11 @@ public class SwiftDeviceInformationPlugin: NSObject, FlutterPlugin {
         result(UIDevice.current.model)
     }
     else if(call.method.elementsEqual("getCPUType")){
+        result(UIDevice.current.getCPUName())
         
-        result(UIDevice.)
     }
     else if(call.method.elementsEqual("getHardware")){
+        result(UIDevice.current.systemName)
     }
   }
 }
