@@ -7,7 +7,7 @@ A flutter plugin to get device information such as device IMEI number, model nam
 Add following dependency in pubspec.yaml file:
 
 ```bash
-device_information:^0.0.2
+device_information:^0.0.3
 ```
 Install by running:
 
