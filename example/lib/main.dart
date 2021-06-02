@@ -14,9 +14,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown',_imeiNo = "",_modelName = "",
-  _manufacturerName = "",_deviceName="",_productName = "",_cpuType="",_hardware = "";
+  String _platformVersion = 'Unknown',
+      _imeiNo = "",
+      _modelName = "",
+      _manufacturerName = "",
+      _deviceName = "",
+      _productName = "",
+      _cpuType = "",
+      _hardware = "";
   var _apiLevel;
+
   @override
   void initState() {
     super.initState();
@@ -25,8 +32,14 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion,imeiNo, modelName,manufacturer,deviceName,productName,
-    cpuType,hardware;
+    late String platformVersion,
+        imeiNo,
+        modelName,
+        manufacturer,
+        deviceName,
+        productName,
+        cpuType,
+        hardware;
     var apiLevel;
     // Platform messages may fail,
     // so we use a try/catch PlatformException.
@@ -35,12 +48,12 @@ class _MyAppState extends State<MyApp> {
       imeiNo = await DeviceInformation.deviceIMEINumber;
       modelName = await DeviceInformation.deviceModel;
       manufacturer = await DeviceInformation.deviceManufacturer;
-      apiLevel =  await DeviceInformation.apiLevel;
+      apiLevel = await DeviceInformation.apiLevel;
       deviceName = await DeviceInformation.deviceName;
       productName = await DeviceInformation.productName;
       cpuType = await DeviceInformation.cpuName;
       hardware = await DeviceInformation.hardware;
-    } on PlatformException catch(e) {
+    } on PlatformException catch (e) {
       platformVersion = '${e.message}';
     }
 
@@ -73,26 +86,45 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 40,),
+              SizedBox(
+                height: 40,
+              ),
               Text('$_platformVersion\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('IMEI Number: $_imeiNo\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('Device Model: $_modelName\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('API Level: $_apiLevel\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('Manufacture Name: $_manufacturerName\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('Device Name: $_deviceName\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('Product Name: $_productName\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('CPU Type: $_cpuType\n'),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Text('Hardware Name: $_hardware\n'),
-              SizedBox(height: 10,),
-
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),
