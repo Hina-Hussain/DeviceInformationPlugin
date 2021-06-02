@@ -47,16 +47,10 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## Developer Team:
 Hina Hussain & her team members (Kamran Khan, Abdul Sattar, Faiza Farooqui) :smile: :tada:
 
+## Follow me
+https://hina-hussain-developer.medium.com/creating-publisher-account-on-the-pub-dev-cf86b91cd2f
+https://hinahussaindev.blogspot.com/2021/05/creating-publisher-account-on-pubdev.html
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
-## Getting Started
-
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
