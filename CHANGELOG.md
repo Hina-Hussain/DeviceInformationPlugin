@@ -6,3 +6,6 @@
 
 ## 0.0.3
 * Stable, null-safe release.
+
+## 0.0.4
+* Bug Fixes.
