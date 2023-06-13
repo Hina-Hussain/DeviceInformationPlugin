@@ -9,3 +9,6 @@
 
 ## 0.0.4
 * Bug Fixes.
+
+## 0.0.4
+* Bug Fixe to get IMEI on Android 9 (API 28)

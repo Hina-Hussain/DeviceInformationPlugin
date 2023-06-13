@@ -1,7 +1,7 @@
 name: device_information
 description: A flutter plugin to get device information such as device IMEI number,model name,API level,CPU Type,Product Name etc for both android & iOS.
-version: 0.0.4
-homepage: https://github.com/Hina-Hussain/DeviceInformationPlugin
+version: 0.0.5
+homepage: https://github.com/jlestrat/DeviceInformationPlugin.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
