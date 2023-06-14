@@ -95,7 +95,7 @@ public class DeviceInformationPlugin implements FlutterPlugin, MethodCallHandler
     if (ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
       return Manifest.permission.READ_PHONE_STATE;
     }else{
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+      if (Build.VERSION.SDK_INT > Build.VERSION_CODES.P) {
         imeiNumber = getDeviceUniqueID();
 
       }else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
